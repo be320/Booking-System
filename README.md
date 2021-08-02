@@ -17,7 +17,7 @@ The purpose of this system is to provide the user with simple way to book a reso
 
 # Tools used
 
-ReactJS & Material-UI
+## ReactJS & Material-UI
 
 
 # Getting Started with Create React App
