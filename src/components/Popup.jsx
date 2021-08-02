@@ -53,10 +53,11 @@ const Popup = props => {
         <div className="popup-row">
           <p>Quantity</p>
         </div>
-        <div className="popup-row">
+        <div className="popup-row" style={{justifyContent:'center'}}>
           <Button
             variant="contained"
             color="primary"
+            
           >
             Book
           </Button>
