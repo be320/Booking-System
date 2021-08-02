@@ -66,6 +66,7 @@ const Dashboard = () => {
             <TableRow>
               <StyledTableCell>ID</StyledTableCell>
               <StyledTableCell align="center">Name</StyledTableCell>
+              <StyledTableCell align="center">Quantity</StyledTableCell>
               <StyledTableCell align="right"></StyledTableCell>
             </TableRow>
           </TableHead>
@@ -77,6 +78,9 @@ const Dashboard = () => {
                 </StyledTableCell>
                 <StyledTableCell align="center" style={{ alignSelf: "start" }}>
                   {resource.name}
+                </StyledTableCell>
+                <StyledTableCell align="center" style={{ alignSelf: "start" }}>
+                  {resource.quantity}
                 </StyledTableCell>
                 <StyledTableCell align="right">
                   {

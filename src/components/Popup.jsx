@@ -47,7 +47,9 @@ const Popup = props => {
           quantity: quantity
       }
 
-      
+      console.log(userRequest)
+
+
 
 
   }
@@ -74,15 +76,15 @@ const Popup = props => {
         <hr />
         <div className="popup-row">
           <p>Date From</p>
-          <DatePicker handleFromDate = {handleFromDate} />
+          <DatePicker handleDate = {handleFromDate} />
         </div>
         <div className="popup-row">
           <p>Date To</p>
-          <DatePicker handleToDate = {handleToDate} />
+          <DatePicker handleDate = {handleToDate} />
         </div>
         <div className="popup-row">
           <p>Quantity</p>
-          <QuantityPicker handleQuantity = {handleQuantity} />
+          <QuantityPicker handleQuantity = {handleQuantity} quantity={quantity} />
         </div>
         <div className="popup-row" style={{justifyContent:'center',marginTop:'50px'}}>
           <Button

@@ -18,18 +18,17 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const QuantityPicker = () => {
+const QuantityPicker = (props) => {
   const classes = useStyles();
-  const [quantity,setQuantity] = useState(1);
 
   const addOne = () => {
-      if(quantity < 100)
-        setQuantity(quantity+1)
+      if(props.quantity < 100)
+        props.handleQuantity(props.quantity+1)
   }
 
   const minusOne = () => {
-    if(quantity > 1)
-      setQuantity(quantity-1)
+    if(props.quantity > 1)
+    props.handleQuantity(props.quantity-1)
 }
 
   return (
@@ -43,7 +42,7 @@ const QuantityPicker = () => {
         >
           <RemoveIcon />
         </IconButton>
-        <TextField disabled id="standard-disabled" style={{width:'7vh',alignItems:'center'}} defaultValue={1} value={quantity} />
+        <TextField disabled id="standard-disabled" style={{width:'7vh',alignItems:'center'}} defaultValue={1} value={props.quantity} />
         <IconButton
           color="primary"
           aria-label="plus"
