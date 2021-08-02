@@ -9,6 +9,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// Date Picker component that can be used to select the date and time easily
 const DatePicker = props => {
   const classes = useStyles();
 

@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// Quantity Picker component that can be used to select the quantity of the resource required
 const QuantityPicker = props => {
   const classes = useStyles();
 

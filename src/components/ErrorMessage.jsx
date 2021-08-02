@@ -15,6 +15,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+
+// error message component to tell the user that he selected more quantity than that available
 const ErrorMessage = props => {
   const classes = useStyles();
   const closeMessage = () => {

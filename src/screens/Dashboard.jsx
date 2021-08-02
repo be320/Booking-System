@@ -11,6 +11,8 @@ import Paper from "@material-ui/core/Paper";
 import Popup from "../components/Popup";
 import Button from "@material-ui/core/Button";
 
+
+//Table Used from Material UI for Dashboard View
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -29,6 +31,7 @@ const StyledTableRow = withStyles(theme => ({
   }
 }))(TableRow);
 
+//Dummy Resources 
 const resources = [
   { id: 1, name: "Resource 1", quantity: 5 },
   { id: 2, name: "Resource 2", quantity: 3 },

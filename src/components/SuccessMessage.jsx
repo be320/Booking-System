@@ -15,6 +15,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// success message component to tell the user that the booking is done successfully
+
 const SuccessMessage = props => {
   const classes = useStyles();
   function rand() {
