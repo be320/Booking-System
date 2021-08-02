@@ -1,3 +1,25 @@
+#Project title
+
+Simple booking system
+
+#Project description
+
+The purpose of this system is to provide the user with simple way to book a resource for chosen time-period. The system has a list of resources that have name and total quantity (representing what is the quantity in stock for this resource). The user is presented with a list of resources on the UI. He can pick any of them and initiate a booking process. 
+
+#Acceptance criteria
+
+-	User can book resources.
+-	Resources can be booked only if the requested quantity is available for the requested period.
+-	If the user tries to book a resource that is not available, he is presented with error message.
+-	If the user tries to book a resource that is available, after successful booking the user is presented with success message.
+-	The part of the validation that checks for conflicts between existing booking time ranges and requested booking time range should be designed as reusable in other places.
+-	At the end of the booking process, an email should be sent to admin@admin.com. For this task email implementation should ONLY write to console “EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID {Id}”. For this task there is no need for real email sending and it is only mocked with console write.
+
+#Tools used
+
+ReactJS & Material-UI
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
