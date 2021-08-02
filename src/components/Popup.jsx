@@ -7,6 +7,8 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import Button from "@material-ui/core/Button";
 import DatePicker from './DatePicker'
 import QuantityPicker from './QuantityPicker'
+import ErrorMessage from './ErrorMessage'
+import SuccessMessage from './SuccessMessage'
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -26,6 +28,8 @@ const Popup = props => {
   const [fromDate,setFromDate] = useState('')
   const [toDate,setToDate] = useState('')
   const [quantity,setQuantity] = useState(1)
+  const [errorOpen,setErrorOpen] = useState(false)
+  const [successOpen,setSuccessOpen] = useState(false)
 
 
   const handleFromDate = (value) => {
@@ -40,6 +44,16 @@ const Popup = props => {
         setQuantity(value)
   }
 
+  const handleErrorOpen = (value) => {
+    setErrorOpen(value)
+}
+
+
+const handleSuccessOpen = (value) => {
+  setSuccessOpen(value)
+}
+
+
   const bookResources = () => {
       const userRequest = {
           toDate: toDate,
@@ -47,14 +61,20 @@ const Popup = props => {
           quantity: quantity
       }
 
-      console.log(userRequest)
+      props.handleClose()
 
-
-
+      if(props.resource.quantity < userRequest.quantity)
+         {
+           handleErrorOpen(true)
+         }
+         else{
+           handleSuccessOpen(true)
+         }
 
   }
 
   return (
+    <div>
     <Modal
       open={props.open}
       onClose={props.handleClose}
@@ -97,6 +117,11 @@ const Popup = props => {
         </div>
       </div>
     </Modal>
+
+    <ErrorMessage errorOpen= {errorOpen} handleErrorOpen={handleErrorOpen} />
+    <SuccessMessage successOpen = {successOpen} handleSuccessOpen={handleSuccessOpen} />
+
+    </div>
   );
 };
 
