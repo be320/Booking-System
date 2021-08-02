@@ -1,10 +1,9 @@
-import './App.css';
-import Container from './screens/Container'
-
+import "./App.css";
+import Container from "./screens/Container";
 
 function App() {
   return (
-    <Container />
+      <Container />
   );
 }
 

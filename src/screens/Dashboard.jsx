@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Dashboard.css";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -8,7 +8,9 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import BookingButton from "../components/BookingButton";
+import Popup from "../components/Popup";
+import Button from '@material-ui/core/Button';
+
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -28,18 +30,12 @@ const StyledTableRow = withStyles(theme => ({
   }
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
 const resources = [
-  { id: 1, name: 'Resource1', quantity: 5 },
-  { id: 2, name: 'Resource2', quantity: 3 },
-  { id: 3, name: 'Resource3', quantity: 8 },
-  { id: 4, name: 'Resource4', quantity: 2 }
+  { id: 1, name: "Resource 1", quantity: 5 },
+  { id: 2, name: "Resource 2", quantity: 3 },
+  { id: 3, name: "Resource 3", quantity: 8 },
+  { id: 4, name: "Resource 4", quantity: 2 }
 ];
-
-// const rows = [createData("Frozen yoghurt", 159, <BookingButton />)];
 
 const useStyles = makeStyles({
   table: {
@@ -49,8 +45,17 @@ const useStyles = makeStyles({
 
 const Dashboard = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const [resourceClicked,setResourceClicked] = useState('')
 
-  const [showPopup,setShowPopup] = useState(false)
+  const handleOpen = (value) => {
+    setOpen(true);
+    setResourceClicked(value)
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div id="dashboard-main">
@@ -70,13 +75,26 @@ const Dashboard = () => {
                 <StyledTableCell component="th" scope="row">
                   {resource.id}
                 </StyledTableCell>
-                <StyledTableCell align="center" style={{alignSelf:'start'}}>{resource.name}</StyledTableCell>
-                <StyledTableCell align="right">{<BookingButton resource={resource} />}</StyledTableCell>
+                <StyledTableCell align="center" style={{ alignSelf: "start" }}>
+                  {resource.name}
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  {
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={()=>{handleOpen(resource)}}
+                    >
+                      Book Here
+                    </Button>
+                  }
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+      <Popup open={open} handleClose={handleClose} resource = {resourceClicked} />
     </div>
   );
 };
