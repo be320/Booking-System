@@ -27,9 +27,12 @@ const ErrorMessage = props => {
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description"
     >
-      <div style={{ top: "15vh", left: "70vh", justifyContent:'center' }} className={classes.paper}>
-        <h1 style={{color:'red'}}>Error !!!</h1>
-        <h3 >The Quantity you need is not available</h3>
+      <div
+        style={{ top: "15vh", left: "70vh", justifyContent: "center" }}
+        className={classes.paper}
+      >
+        <h1 style={{ color: "red" }}>Error !!!</h1>
+        <h3>The Quantity you need is not available</h3>
       </div>
     </Modal>
   );

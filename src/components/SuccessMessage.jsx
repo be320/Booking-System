@@ -30,10 +30,15 @@ const SuccessMessage = props => {
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description"
     >
-      <div style={{ top: "15vh", left: "70vh", justifyContent:'center' }} className={classes.paper}>
-        <h1 style={{color:'green'}}>Booked !!</h1>
-        <h3 >Your booking is successfully completed</h3>
-        <p>EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID {rand()} </p>
+      <div
+        style={{ top: "15vh", left: "70vh", justifyContent: "center" }}
+        className={classes.paper}
+      >
+        <h1 style={{ color: "green" }}>Booked !!</h1>
+        <h3>Your booking is successfully completed</h3>
+        <p>
+          EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID {rand()}{" "}
+        </p>
       </div>
     </Modal>
   );

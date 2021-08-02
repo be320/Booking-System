@@ -4,17 +4,17 @@ import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles(theme => ({
   textField: {
-    width: '29vh',
-    marginTop:'1vh'
+    width: "29vh",
+    marginTop: "1vh"
   }
 }));
 
-const DatePicker = (props) => {
+const DatePicker = props => {
   const classes = useStyles();
 
-  const changeDate = (value) => {
-      props.handleDate(value)
-  }
+  const changeDate = value => {
+    props.handleDate(value);
+  };
 
   return (
     <form className={classes.container} noValidate>

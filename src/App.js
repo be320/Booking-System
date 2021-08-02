@@ -2,9 +2,7 @@ import "./App.css";
 import Container from "./screens/Container";
 
 function App() {
-  return (
-      <Container />
-  );
+  return <Container />;
 }
 
 export default App;

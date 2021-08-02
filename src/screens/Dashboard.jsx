@@ -9,8 +9,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Popup from "../components/Popup";
-import Button from '@material-ui/core/Button';
-
+import Button from "@material-ui/core/Button";
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -46,11 +45,11 @@ const useStyles = makeStyles({
 const Dashboard = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const [resourceClicked,setResourceClicked] = useState('')
+  const [resourceClicked, setResourceClicked] = useState("");
 
-  const handleOpen = (value) => {
+  const handleOpen = value => {
     setOpen(true);
-    setResourceClicked(value)
+    setResourceClicked(value);
   };
 
   const handleClose = () => {
@@ -87,7 +86,9 @@ const Dashboard = () => {
                     <Button
                       variant="contained"
                       color="primary"
-                      onClick={()=>{handleOpen(resource)}}
+                      onClick={() => {
+                        handleOpen(resource);
+                      }}
                     >
                       Book Here
                     </Button>
@@ -98,7 +99,7 @@ const Dashboard = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Popup open={open} handleClose={handleClose} resource = {resourceClicked} />
+      <Popup open={open} handleClose={handleClose} resource={resourceClicked} />
     </div>
   );
 };

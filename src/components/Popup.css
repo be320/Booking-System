@@ -1,8 +1,6 @@
-.popup-row{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    justify-content: space-between;
-    margin-top: '50px';
-
+.popup-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: "50px";
 }

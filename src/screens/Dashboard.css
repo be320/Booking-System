@@ -1,6 +1,6 @@
-#dashboard-main{
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-    min-width: 50vh;
+#dashboard-main {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  min-width: 50vh;
 }
